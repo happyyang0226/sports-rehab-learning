@@ -7,14 +7,14 @@
    data-footer : off 이면 하단 정보를 넣지 않음 */
 (function () {
   var s = document.currentScript, d = (s && s.dataset) || {};
-  var B = { univ: '청암대학교', dept: '물리치료과', site: 'https://www.scjc.ac.kr', portal: 'https://pt-exercise.vercel.app/portal.html' };
+  var B = { univ: '청암대학교', dept: '물리치료과', site: 'https://www.ca.ac.kr', portal: 'https://pt-exercise.vercel.app/portal.html' };
   var base = s && s.src ? s.src.replace(/[^\/]*$/, '') : '';
   var esc = function (t) { return String(t == null ? '' : t).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
   function ready(fn) { if (document.readyState !== 'loading') fn(); else document.addEventListener('DOMContentLoaded', fn); }
   ready(function () {
     var b = document.body; if (!b) return;
     b.classList.add('univ-kit'); if (d.family) b.setAttribute('data-univ', d.family);
-    b.style.setProperty('--u-art', 'url("' + base + 'campus.svg")');
+    b.style.setProperty('--u-art', 'url("' + base + 'campus.svg")'); b.style.setProperty('--u-logo', 'url("' + base + 'logo.png")');
     var app = d.app || document.title.split(/[|·—-]/)[0].trim();
     if (!document.querySelector('.uk-util')) {
       var u = document.createElement('div'); u.className = 'uk-util';
@@ -23,7 +23,7 @@
     }
     if (d.footer !== 'off' && !document.querySelector('.uk-foot')) {
       var f = document.createElement('footer'); f.className = 'uk-foot';
-      f.innerHTML = '<div class="uk-in"><div class="uk-fb"><span class="uk-logo">' + esc(B.univ.slice(0, 2)) + '</span><div><b>' + esc(B.univ) + ' ' + esc(B.dept) + '</b><small>' + esc(app) + ' · 수업용 학습 웹앱</small></div></div>' +
+      f.innerHTML = '<div class="uk-in"><div class="uk-fb"><span class="uk-logo"><img src="' + base + 'logo.png" alt="' + esc(B.univ) + ' 로고"></span><div><b>' + esc(B.univ) + ' ' + esc(B.dept) + '</b><small>' + esc(app) + ' · 수업용 학습 웹앱</small></div></div>' +
         '<nav><a href="' + B.portal + '">물리치료과 학습 포털</a><a href="' + B.site + '" target="_blank" rel="noopener">대학 홈페이지</a></nav><small class="uk-copy">© ' + new Date().getFullYear() + ' ' + esc(B.univ) + ' ' + esc(B.dept) + '</small></div>';
       b.appendChild(f);
     }
