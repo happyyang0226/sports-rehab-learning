@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.vercel/
+.env*
+!.env.example
+public/cloud.bundle.js
+public/cloud-config.js
