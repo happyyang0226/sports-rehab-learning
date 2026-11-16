@@ -37,7 +37,7 @@ begin
    where user_id=owner_id and course_id=p_course_id and chapter_id=p_chapter_id and revision=p_expected_revision
    returning * into result;
  else raise exception 'Invalid revision' using errcode='22023'; end if;
- if result.user_id is null then raise exception 'PT_LEARNING_CONFLICT' using errcode='40001'; end if;
+ if result.user_id is null then raise exception 'PT_LEARNING_CONFLICT' using errcode='PT409'; end if;
  return next result;
 end $$;
 revoke execute on function public.pt_learning_save(text,integer,jsonb,bigint) from public,anon;
