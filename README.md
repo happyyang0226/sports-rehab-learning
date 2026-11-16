@@ -14,7 +14,7 @@ Node.js 22 이상에서 `npm ci` 후 `.env.example`을 `.env.local`로 복사하
 
 ## Supabase Auth
 
-이메일·비밀번호 가입과 로그인을 제공합니다. 두 앱은 같은 Supabase 프로젝트의 계정을 사용할 수 있으나 각 주소에서 로그인해야 합니다. 확인 메일·비밀번호 재설정 링크 사용을 위해 Supabase Auth의 Redirect URLs에 배포 주소를 등록하세요. 기존 프로젝트의 메일 인증 설정은 이 변경에서 수정하지 않았습니다.
+이메일·비밀번호 가입과 로그인을 제공합니다. 두 앱은 같은 Supabase 프로젝트의 계정을 사용할 수 있으나 각 주소에서 로그인해야 합니다. 확인 메일·비밀번호 재설정 링크 사용을 위해 Supabase Auth의 Redirect URLs에 배포 주소를 등록하세요. 기존 프로젝트의 메일 인증 설정은 이 변경에서 수정하지 않았습니다. 비밀번호 재설정 버튼은 Redirect URLs 등록 후 `AUTH_REDIRECTS_READY=true`로 빌드할 때만 표시됩니다.
 
 ## 기존 Sites 앱과의 관계
 
