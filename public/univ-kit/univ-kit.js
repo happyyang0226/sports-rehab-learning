@@ -7,7 +7,7 @@
    data-footer : off 이면 하단 정보를 넣지 않음 */
 (function () {
   var s = document.currentScript, d = (s && s.dataset) || {};
-  var B = { univ: '청암대학교', dept: '물리치료과', site: 'https://www.ca.ac.kr', portal: 'https://pt-exercise.vercel.app/portal.html' };
+  var B = { univ: '청암대학교', dept: '물리치료과', site: 'https://www.ca.ac.kr', portal: 'https://pt-portal-eta.vercel.app/' };
   var base = s && s.src ? s.src.replace(/[^\/]*$/, '') : '';
   var esc = function (t) { return String(t == null ? '' : t).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
   function ready(fn) { if (document.readyState !== 'loading') fn(); else document.addEventListener('DOMContentLoaded', fn); }
